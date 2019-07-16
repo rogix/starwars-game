@@ -22,15 +22,18 @@ function GameContent() {
 			<GameHeader />
 			<div className="planet-info">
 				<span>
-					<h3>Population:</h3>
+					<h3>Population</h3>
+					<div className="line" />
 					<p>30000</p>
 				</span>
 				<span>
-					<h3>Climate:</h3>
+					<h3>Climate</h3>
+					<div className="line" />
 					<p>arid</p>
 				</span>
 				<span>
-					<h3>Terrain:</h3>
+					<h3>Terrain</h3>
+					<div className="line" />
 					<p>desert</p>
 				</span>
 				<p>

@@ -23,8 +23,8 @@ body {
 	width: 600px;
 	height: 500px;
 	border: 2px solid #fdd505;
-  border-radius: 10px;
-  background: #0B0A0A;
+	border-radius: 10px;
+	background: #0b0a0a;
 }
 
 .game-container {
@@ -48,29 +48,38 @@ body {
 	border: 1px solid #fdd505;
 }
 
+.planet-info .line {
+	border: 1px solid yellow;
+	width: 100%;
+}
+
 .planet-info span {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 250px;
+	width: 300px;
 	margin: 0 auto;
 }
 
 .planet-info span h3 {
 	color: #fdd505;
-	/* margin: 30px 0; */
+	border-right: 2px solid;
+	line-height: 1;
+	padding-right: 5px;
 }
 
 .planet-info span p {
 	font-weight: 600;
-	color: #fff;
+	color: #161611;
+	padding: 10px;
+	background: #fdd505;
+	min-width: 100px;
 }
 
 .planet-info p {
 	color: #fff;
 	text-align: center;
 	font-weight: 900;
-	margin: 10px 0 20px;
 }
 
 .planet-info p span {

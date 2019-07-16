@@ -23,7 +23,8 @@ body {
 	width: 600px;
 	height: 500px;
 	border: 2px solid #fdd505;
-	border-radius: 10px;
+  border-radius: 10px;
+  background: #0B0A0A;
 }
 
 .game-container {

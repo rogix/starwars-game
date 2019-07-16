@@ -5,14 +5,13 @@ import api from '../services/api';
 
 class Main extends Component {
 	state = {
-		id: 1,
 		dataResults: []
 	};
 
 	async componentDidMount() {
 		const { dataResults, id } = this.state;
 
-		const response = await api.get(`/planets/:${id}`);
+		const response = await api.get('/planets/');
 
 		// const data = {
 		// 	name: response.data.results

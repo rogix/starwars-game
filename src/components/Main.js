@@ -6,7 +6,7 @@ import api from '../services/api';
 class Main extends Component {
 	state = {
 		loading: true,
-		planets: []
+		planet: {}
 	};
 
 	componentDidMount() {
@@ -17,37 +17,29 @@ class Main extends Component {
 		const randonPlanet = Math.round(Math.random() * (61 - 1) + 1);
 
 		try {
-			const response = await api.get(`/planets/${randonPlanet}/`);
-
-			const data = {
-				name: response.data.name,
-				population: response.data.population,
-				climate: response.data.climate,
-				terrain: response.data.terrain,
-				filmsTotal: response.data.films.length
-			};
+			const { data: { name, population, climate, terrain, films } } = await api.get(`/planets/${randonPlanet}/`);
 
 			this.setState({
-				planets: [data],
+				planet: {
+					name,
+					population,
+					climate,
+					terrain,
+					filmsTotal: films.length
+				},
 				loading: false
 			});
 		} catch (error) {
-			console.log('error', error);
+			console.log('Sorry, something went wrong. Please try again...', error);
 		}
 	};
 
 	render() {
-		const { planets, loading } = this.state;
+		const { planet, loading } = this.state;
 
 		return (
 			<div className="main-container">
-				{!loading ? (
-					planets.map(planet => {
-						return <GameContainer key={planet.name} {...planet} getPlanet={this.getPlanet} />;
-					})
-				) : (
-					<h1>Loading...</h1>
-				)}
+				{!loading ? <GameContainer {...planet} getPlanet={this.getPlanet} /> : <h1>Loading...</h1>}
 			</div>
 		);
 	}

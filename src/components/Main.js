@@ -5,6 +5,7 @@ import api from '../services/api';
 
 class Main extends Component {
 	state = {
+		loading: true,
 		planets: []
 	};
 
@@ -27,7 +28,8 @@ class Main extends Component {
 			};
 
 			this.setState({
-				planets: [data]
+				planets: [data],
+				loading: false
 			});
 		} catch (error) {
 			console.log('error', error);
@@ -35,13 +37,17 @@ class Main extends Component {
 	};
 
 	render() {
-		const { planets } = this.state;
+		const { planets, loading } = this.state;
 
 		return (
 			<div className="main-container">
-				{planets.map(planet => {
-					return <GameContainer key={planet.name} {...planet} getPlanet={this.getPlanet} />;
-				})}
+				{!loading ? (
+					planets.map(planet => {
+						return <GameContainer key={planet.name} {...planet} getPlanet={this.getPlanet} />;
+					})
+				) : (
+					<h1>Loading...</h1>
+				)}
 			</div>
 		);
 	}

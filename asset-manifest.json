@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/starwars-game/static/css/main.411a2b16.chunk.css",
+    "main.js": "/starwars-game/static/js/main.7205cf06.chunk.js",
+    "main.js.map": "/starwars-game/static/js/main.7205cf06.chunk.js.map",
+    "runtime~main.js": "/starwars-game/static/js/runtime~main.52bcb9b9.js",
+    "runtime~main.js.map": "/starwars-game/static/js/runtime~main.52bcb9b9.js.map",
+    "static/js/2.6e87735a.chunk.js": "/starwars-game/static/js/2.6e87735a.chunk.js",
+    "static/js/2.6e87735a.chunk.js.map": "/starwars-game/static/js/2.6e87735a.chunk.js.map",
+    "index.html": "/starwars-game/index.html",
+    "precache-manifest.b78fc5162b170f9a6400820959533755.js": "/starwars-game/precache-manifest.b78fc5162b170f9a6400820959533755.js",
+    "service-worker.js": "/starwars-game/service-worker.js",
+    "static/css/main.411a2b16.chunk.css.map": "/starwars-game/static/css/main.411a2b16.chunk.css.map"
+  }
+}

@@ -12,8 +12,9 @@ class Main extends Component {
 		this.getPlanet();
 	}
 
-	getPlanet = async e => {
+	getPlanet = async () => {
 		const randonPlanet = Math.round(Math.random() * (61 - 1) + 1);
+
 		try {
 			const response = await api.get(`/planets/${randonPlanet}/`);
 
@@ -28,8 +29,6 @@ class Main extends Component {
 			this.setState({
 				planets: [data]
 			});
-
-			console.log(data.name);
 		} catch (error) {
 			console.log('error', error);
 		}

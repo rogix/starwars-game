@@ -30,7 +30,7 @@ class Main extends Component {
 				loading: false
 			});
 		} catch (error) {
-			console.log('Sorry, something went wrong. Please try again...', error);
+			alert('Sorry, something went wrong. Please, reload the page to try again...', error);
 		}
 	};
 

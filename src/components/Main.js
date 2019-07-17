@@ -5,32 +5,43 @@ import api from '../services/api';
 
 class Main extends Component {
 	state = {
-		dataResults: []
+		planets: []
 	};
 
-	async componentDidMount() {
-		const { dataResults, id } = this.state;
-
-		const response = await api.get('/planets/');
-
-		// const data = {
-		// 	name: response.data.results
-		// };
-
-		this.setState({
-			dataResults: [response.data.results]
-		});
+	componentDidMount() {
+		this.getPlanet();
 	}
 
+	getPlanet = async e => {
+		const randonPlanet = Math.round(Math.random() * (61 - 1) + 1);
+		try {
+			const response = await api.get(`/planets/${randonPlanet}/`);
+
+			const data = {
+				name: response.data.name,
+				population: response.data.population,
+				climate: response.data.climate,
+				terrain: response.data.terrain,
+				filmsTotal: response.data.films.length
+			};
+
+			this.setState({
+				planets: [data]
+			});
+
+			console.log(data.name);
+		} catch (error) {
+			console.log('error', error);
+		}
+	};
+
 	render() {
-		const { dataResults } = this.state;
+		const { planets } = this.state;
 
 		return (
 			<div className="main-container">
-				<GameContainer />
-
-				{dataResults.map(result => {
-					return console.log(result);
+				{planets.map(planet => {
+					return <GameContainer key={planet.name} {...planet} getPlanet={this.getPlanet} />;
 				})}
 			</div>
 		);
